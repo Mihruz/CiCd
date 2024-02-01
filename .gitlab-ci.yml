@@ -12,7 +12,6 @@ build-job:
     - echo "Compile complete."
   artifacts:
     paths:
-      - src/cat/arti
-      - src/grep/arti
+      - src/cat/s21_cat
+      - src/grep/s21_grep
     expire_in: 30 days
-

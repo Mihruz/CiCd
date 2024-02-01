@@ -1,0 +1,18 @@
+stages:
+  - build
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - cd src/cat
+    - make s21_cat
+    - cd ../grep
+    - make all
+    - echo "Compile complete."
+  artifacts:
+    paths:
+      - src/cat/1
+      - src/grep/1
+    expire_in: 30 days
+

@@ -8,11 +8,11 @@ build-job:
     - cd src/cat
     - make s21_cat
     - cd ../grep
-    - make all
+    - make s21_grep
     - echo "Compile complete."
   artifacts:
     paths:
-      - src/cat/1
-      - src/grep/1
+      - src/cat/arti
+      - src/grep/arti
     expire_in: 30 days
 

@@ -34,3 +34,4 @@ unit-test-job:
     - bash test_func_cat.sh
     - cd ../grep
     - bash test_func_grep.sh
+  allow_failure: false

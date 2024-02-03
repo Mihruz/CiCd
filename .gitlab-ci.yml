@@ -1,5 +1,6 @@
 stages:
   - build
+  - style
 
 build-job:
   stage: build
@@ -15,3 +16,12 @@ build-job:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
+
+clang-test-job:
+  stage: style
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - cd src
+    - clang-format -n -Werror -style=Google cat/*.c
+    - clang-format -n -Werror -style=Google grep/*.c
+    - echo "No lint issues found."

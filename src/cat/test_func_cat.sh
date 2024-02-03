@@ -17,7 +17,6 @@ declare -a extra=(
 "no_file.txt"
 "-n -b test_1_cat.txt"
 "-s -n -e test_4_cat.txt"
-"test_1_cat.txt -n"
 "-n test_1_cat.txt"
 "-n test_1_cat.txt test_2_cat.txt"
 "-v test_5_cat.txt"

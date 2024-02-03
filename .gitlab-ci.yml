@@ -22,6 +22,6 @@ clang-test-job:
   script:
     - echo "Linting code... This will take about 10 seconds."
     - cd src
-    - clang-format -n -Werror -style=Google cat/*.c
-    - clang-format -n -Werror -style=Google grep/*.c
+    - clang-format -style=Google -n -Werror cat/*.c cat/*.h
+    - clang-format -style=Google -n -Werror grep/*.c grep/*.h
     - echo "No lint issues found."

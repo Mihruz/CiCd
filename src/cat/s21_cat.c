@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
     read_file(argc, argv, &cat_option);
   }
   return 0;
-}
+   }
 
 int read_options(int argc, char **argv, opt_t *cat_option) {
   int option, optCheck = 1;

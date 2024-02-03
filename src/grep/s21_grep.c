@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     }
   } else
     printf(ERROR);
-     return 0;
+  return 0;
 }
 
 int read_options(int argc, char **argv, opt_t *grep_options, char *pattern) {

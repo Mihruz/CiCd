@@ -1,6 +1,7 @@
 stages:
   - build
   - style
+  - test
 
 build-job:
   stage: build
@@ -25,3 +26,11 @@ clang-test-job:
     - clang-format -style=Google -n -Werror cat/*.c cat/*.h
     - clang-format -style=Google -n -Werror grep/*.c grep/*.h
     - echo "No lint issues found."
+
+unit-test-job:
+  stage: test
+  script:
+    - cd src/cat
+    - bash test_func_cat.sh
+    - cd ../grep
+    - bash test_func_grep.sh

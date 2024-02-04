@@ -2,6 +2,7 @@ stages:
   - build
   - style
   - test
+  - deploy
 
 build-job:
   stage: build
@@ -35,3 +36,10 @@ unit-test-job:
     - cd ../grep
     - bash test_func_grep.sh
   allow_failure: false
+
+deploy-job:
+  stage: deploy
+  script:
+    - bash src/deploy.sh
+  allow_failure: false
+  when: manual

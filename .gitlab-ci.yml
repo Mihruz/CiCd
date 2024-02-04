@@ -27,6 +27,7 @@ clang-test-job:
     - clang-format -style=Google -n -Werror cat/*.c cat/*.h
     - clang-format -style=Google -n -Werror grep/*.c grep/*.h
     - echo "No lint issues found."
+  allow_failure: false
 
 unit-test-job:
   stage: test

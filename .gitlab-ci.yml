@@ -13,6 +13,8 @@ build-job:
     - cd ../grep
     - make s21_grep
     - echo "Compile complete."
+  after_script:
+    - bash src/telegram_bot.sh
   artifacts:
     paths:
       - src/cat/s21_cat
@@ -27,6 +29,8 @@ clang-test-job:
     - clang-format -style=Google -n -Werror cat/*.c cat/*.h
     - clang-format -style=Google -n -Werror grep/*.c grep/*.h
     - echo "No lint issues found."
+  after_script:
+    - bash src/telegram_bot.sh
   allow_failure: false
 
 unit-test-job:
@@ -36,11 +40,15 @@ unit-test-job:
     - bash test_func_cat.sh
     - cd ../grep
     - bash test_func_grep.sh
+  after_script:
+    - bash src/telegram_bot.sh
   allow_failure: false
 
 deploy-job:
   stage: deploy
   script:
     - bash src/deploy.sh
+  after_script:
+    - bash src/telegram_bot.sh
   allow_failure: false
   when: manual
